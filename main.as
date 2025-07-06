@@ -115,7 +115,7 @@ void SendMessageAsync()
 	req.Url = Setting_ServerURL + "/send";
 	req.Headers["Authorization"] = "Secret " + g_secret;
 	req.Body = "message=" + Net::UrlEncode(msg);
-	req.Start();
+	await(req.Start());
 }
 
 bool AuthAppAsync()
